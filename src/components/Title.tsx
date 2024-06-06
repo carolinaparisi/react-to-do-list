@@ -1,5 +1,10 @@
 import "./Title.css";
 
 export default function App() {
-	return <h1>TO DO LIST 🗒️</h1>;
+	return (
+		<div className="title-container">
+			<h1 className="title-first">TO DO</h1>
+			<h2 className="title-second">list</h2>
+		</div>
+	);
 }

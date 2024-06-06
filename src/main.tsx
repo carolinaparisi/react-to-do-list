@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Title from "./components/Title.tsx";
 import "./index.css";
+import App from "./components/App";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	<React.StrictMode>
-		<Title />
+		<App />
 	</React.StrictMode>
 );

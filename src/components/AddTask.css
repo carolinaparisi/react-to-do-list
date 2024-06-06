@@ -1,0 +1,30 @@
+.input-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 90%;
+	position: relative;
+}
+
+.add-input {
+	height: 3.5rem;
+	border-radius: 6px;
+	background-color: #f5efe7;
+}
+
+.add-btn {
+	width: 4.5rem;
+	height: 2.5rem;
+	border-radius: 6px;
+	background-color: #d8c4b6;
+	border: 1px solid #213555;
+	font-size: 1.3rem;
+	font-family: "Italiana", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	right: 0.5rem;
+}
