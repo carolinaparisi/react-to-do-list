@@ -1,10 +1,27 @@
 import "./AddTask.css";
 
-export default function AddTask() {
+interface AddTaskProps {
+	createTask: (input: string) => void;
+	setTaskName: (value: string) => void;
+	taskName: string;
+}
+
+export default function AddTask({
+	createTask,
+	setTaskName,
+	taskName,
+}: AddTaskProps) {
 	return (
 		<div className="input-container">
-			<input type="text" className="add-input" />
-			<button className="add-btn">Add</button>
+			<input
+				value={taskName}
+				onChange={(event) => setTaskName(event.target.value)}
+				type="text"
+				className="add-input"
+			/>
+			<button onClick={() => createTask(taskName)} className="add-btn">
+				Add
+			</button>
 		</div>
 	);
 }

@@ -1,5 +1,9 @@
 import "./TableTab.css";
 
-export default function TableTab() {
-	return <h1>TableTab here</h1>;
+interface TableTabProps {
+	name: string;
+}
+
+export default function TableTab({ name }: TableTabProps) {
+	return <button className="filter-tab">{name}</button>;
 }
