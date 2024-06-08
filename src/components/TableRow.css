@@ -1,7 +1,9 @@
 .table-row {
 	display: flex;
+	justify-content: space-between;
 	align-items: center;
 	padding-left: 1rem;
+	padding-right: 1rem;
 	background-color: #213555;
 	height: 3.5rem;
 	font-family: "Inter", sans-serif;
@@ -10,4 +12,10 @@
 	font-style: normal;
 	color: #ffffff;
 	border: 1px solid #d8c4b6;
+}
+
+.delete-btn {
+	width: 4rem;
+	cursor: pointer;
+	color: #213555;
 }

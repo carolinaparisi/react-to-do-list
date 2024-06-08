@@ -8,6 +8,14 @@ export default function MainContainers() {
 
 	const [tasks, setTasks] = useState(["Go out shopping", "Study React"]);
 
+	function handleDeleteTask(task: string) {
+		const filteredTasks = tasks.filter((currentTask) => {
+			return !(currentTask === task);
+		});
+
+		setTasks(filteredTasks);
+	}
+
 	function addNewTask(taskName: string) {
 		const newTasks = [...tasks, taskName];
 		setTasks(newTasks);
@@ -21,7 +29,7 @@ export default function MainContainers() {
 				setTaskName={setTaskName}
 				taskName={taskName}
 			/>
-			<TaskTable tasks={tasks} />
+			<TaskTable tasks={tasks} handleDeleteTask={handleDeleteTask} />
 		</div>
 	);
 }

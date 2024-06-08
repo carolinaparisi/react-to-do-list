@@ -4,9 +4,10 @@ import TableRow from "./TableRow";
 
 interface TaskTableProps {
 	tasks: string[];
+	handleDeleteTask: (task: string) => void;
 }
 
-export default function TaskTable({ tasks }: TaskTableProps) {
+export default function TaskTable({ tasks, handleDeleteTask }: TaskTableProps) {
 	return (
 		<div className="task-table">
 			<div className="table-tab">
@@ -15,7 +16,13 @@ export default function TaskTable({ tasks }: TaskTableProps) {
 				<TableTab name="incomplete" />
 			</div>
 			{tasks.map((task, index) => {
-				return <TableRow key={index} task={task} />;
+				return (
+					<TableRow
+						key={index}
+						task={task}
+						handleDeleteTask={handleDeleteTask}
+					/>
+				);
 			})}
 		</div>
 	);

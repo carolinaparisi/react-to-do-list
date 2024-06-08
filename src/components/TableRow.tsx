@@ -2,8 +2,20 @@ import "./TableRow.css";
 
 interface TableRowProps {
 	task: string;
+	handleDeleteTask: (task: string) => void;
 }
 
-export default function TableRow({ task }: TableRowProps) {
-	return <div className="table-row">{task}</div>;
+export default function TableRow({ task, handleDeleteTask }: TableRowProps) {
+	return (
+		<div className="table-row">
+			<div>{task}</div>
+			<button
+				className="delete-btn"
+				onClick={() => {
+					handleDeleteTask(task);
+				}}>
+				delete
+			</button>
+		</div>
+	);
 }
