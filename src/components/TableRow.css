@@ -15,7 +15,6 @@
 }
 
 .delete-btn {
-	width: 4rem;
 	cursor: pointer;
-	color: #213555;
+	background-color: #213555;
 }

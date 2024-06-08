@@ -1,3 +1,4 @@
+import { Trash2 } from "lucide-react";
 import "./TableRow.css";
 
 interface TableRowProps {
@@ -14,7 +15,7 @@ export default function TableRow({ task, handleDeleteTask }: TableRowProps) {
 				onClick={() => {
 					handleDeleteTask(task);
 				}}>
-				delete
+				<Trash2 />
 			</button>
 		</div>
 	);
