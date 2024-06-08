@@ -29,7 +29,9 @@ export default function MainContainers() {
 				setTaskName={setTaskName}
 				taskName={taskName}
 			/>
-			<TaskTable tasks={tasks} handleDeleteTask={handleDeleteTask} />
+			{tasks.length !== 0 && (
+				<TaskTable tasks={tasks} handleDeleteTask={handleDeleteTask} />
+			)}
 		</div>
 	);
 }
