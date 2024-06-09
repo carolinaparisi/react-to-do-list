@@ -7,14 +7,24 @@ import "./TableRow.css";
 interface TableRowProps {
 	task: Task;
 	handleDeleteTask: (taskName: string) => void;
+	handleCheckTask: (id: number) => void;
 }
 
-export default function TableRow({ task, handleDeleteTask }: TableRowProps) {
+export default function TableRow({
+	task,
+	handleDeleteTask,
+	handleCheckTask,
+}: TableRowProps) {
 	return (
 		<div className="table-row">
 			<div className="square-task">
-				<button className="square">
-					<Square size={16} />
+				<button
+					className="square"
+					onClick={() => {
+						console.log(task.isCheck);
+						return handleCheckTask(task.id);
+					}}>
+					{task.isCheck ? <SquareCheck size={16} /> : <Square size={16} />}
 				</button>
 				<div className="task">{task.name}</div>
 			</div>

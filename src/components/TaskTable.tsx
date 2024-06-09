@@ -6,9 +6,14 @@ import { Task } from "./MainContainer";
 interface TaskTableProps {
 	tasks: Task[];
 	handleDeleteTask: (task: string) => void;
+	handleCheckTask: (id: number) => void;
 }
 
-export default function TaskTable({ tasks, handleDeleteTask }: TaskTableProps) {
+export default function TaskTable({
+	tasks,
+	handleDeleteTask,
+	handleCheckTask,
+}: TaskTableProps) {
 	return (
 		<div className="task-table">
 			<div className="table-tab">
@@ -22,6 +27,7 @@ export default function TaskTable({ tasks, handleDeleteTask }: TaskTableProps) {
 						key={index}
 						task={task}
 						handleDeleteTask={handleDeleteTask}
+						handleCheckTask={handleCheckTask}
 					/>
 				);
 			})}
