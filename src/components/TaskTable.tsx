@@ -1,9 +1,10 @@
 import "./TaskTable.css";
 import TableTab from "./TableTab";
 import TableRow from "./TableRow";
+import { Task } from "./MainContainer";
 
 interface TaskTableProps {
-	tasks: string[];
+	tasks: Task[];
 	handleDeleteTask: (task: string) => void;
 }
 

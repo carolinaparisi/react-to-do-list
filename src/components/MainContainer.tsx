@@ -3,21 +3,35 @@ import AddTask from "./AddTask.tsx";
 import TaskTable from "./TaskTable.tsx";
 import { useState } from "react";
 
+export interface Task {
+	name: string;
+	isCheck: boolean;
+}
+
 export default function MainContainers() {
 	const [taskName, setTaskName] = useState("");
 
-	const [tasks, setTasks] = useState(["Go out shopping", "Study React"]);
+	const [tasks, setTasks] = useState<Task[]>([
+		{ name: "Go out shopping", isCheck: false },
+		{ name: "Study React", isCheck: false },
+	]);
 
-	function handleDeleteTask(task: string) {
+	function handleDeleteTask(name: string) {
 		const filteredTasks = tasks.filter((currentTask) => {
-			return !(currentTask === task);
+			return !(currentTask.name === name);
 		});
 
 		setTasks(filteredTasks);
 	}
 
-	function addNewTask(taskName: string) {
-		const newTasks = [...tasks, taskName];
+	function addNewTask(name: string) {
+		const newTasks = [
+			...tasks,
+			{
+				name: name,
+				isCheck: false,
+			},
+		];
 		setTasks(newTasks);
 		setTaskName("");
 	}

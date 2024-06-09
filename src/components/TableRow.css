@@ -18,3 +18,16 @@
 	cursor: pointer;
 	background-color: #213555;
 }
+
+.square-task {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.square {
+	display: flex;
+	align-items: flex-end;
+	background-color: #213555;
+	cursor: pointer;
+}
