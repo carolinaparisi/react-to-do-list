@@ -9,7 +9,7 @@ export interface Task {
 	isCheck: boolean;
 }
 
-export default function MainContainers() {
+export default function MainContainer() {
 	const [taskName, setTaskName] = useState("");
 
 	const [tasks, setTasks] = useState<Task[]>([
